@@ -19,6 +19,20 @@
     right: 10%;
 }
 
+.texteTrouba {
+    position: fixed;
+    text-align: justify;
+    text-justify: inter-word;
+    max-width: 30%;
+    bottom: 5%;
+    left: 63%;
+    right: 14%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 @media screen and (max-width: 769px){   
     .trouba {
         position: fixed;
@@ -32,9 +46,22 @@
     .parchemin {
         position: fixed;
         width: 70%;
-        max-width: 400px;
         height: 35%;
-        left: 3%;
+        right: 27%;
         bottom: -5%;
+    }
+
+    .texteTrouba {
+        position: fixed;
+        text-align: justify;
+        text-justify: inter-word;
+        max-width: 70%;
+        bottom: 3%;
+        left: 10%;
+        right: 35%;
+        height: 17%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
