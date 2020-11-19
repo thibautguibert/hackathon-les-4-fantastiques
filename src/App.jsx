@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './Components/Home.jsx';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Components/Home';
 import Monture from './Components/Monture';
 import Itineraire from './Components/Itineraire';
 import Resultats from './Components/Resultats';
