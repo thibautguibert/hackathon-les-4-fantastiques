@@ -6,6 +6,7 @@ import Pied from '../Images/pied.png';
 import Fumant from '../Images/fumant.png';
 import Parchemin from '../Images/parchemin.png';
 import './Monture.css';
+import Troubadour from './Troubadour';
 
 class Monture extends React.Component {
   constructor() {
@@ -136,8 +137,10 @@ class Monture extends React.Component {
             </div>
           </NavLink>
         </div>
+        <Troubadour />
       </div>
     );
   }
 }
+
 export default Monture;
