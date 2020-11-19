@@ -7,7 +7,10 @@ function Troubadour() {
     return(
         <div className="display">
             <img src={wejdene} alt="troubadour" className="trouba"></img>
-            <img src={parchemin} alt="parchemin" className="parchemin"></img>
+            <div className="blocParchemin">
+                <img src={parchemin} alt="parchemin" className="parchemin"></img>
+                <p className="texteTrouba">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.</p>
+            </div>
         </div>
     )
 }
