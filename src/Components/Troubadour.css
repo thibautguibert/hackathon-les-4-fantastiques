@@ -1,0 +1,40 @@
+.display {
+    position: relative;
+}
+
+.trouba {
+    position: fixed;
+    width: auto;
+    height: 50%;
+    bottom: -10%;
+    right: 1%;
+    z-index: 1;
+}
+
+.parchemin {
+    position: fixed;
+    width: 30%;
+    height: 50%;
+    bottom: -5%;
+    right: 10%;
+}
+
+@media screen and (max-width: 769px){   
+    .trouba {
+        position: fixed;
+        width: auto;
+        height: 40%;
+        bottom: -10%;
+        right: 1%;
+        z-index: 1;
+    }
+    
+    .parchemin {
+        position: fixed;
+        width: 70%;
+        max-width: 400px;
+        height: 35%;
+        left: 3%;
+        bottom: -5%;
+    }
+}
