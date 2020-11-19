@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bistreB: #F8E7BA;
+    --coffe: rgba(118, 78, 45, 0.4);
+    --sealB: #5B2712;
+    --quincy: #675B44;
+    --darkS: #46191A;
+    --charleston: #2A2A2A;
+    --coffeP: #764E2D;
+}
+
+body {
+    font-family: "Uncial Antiqua";
+}
