@@ -22,15 +22,45 @@ const signs = {
     "8": "↺"
 };
 
-function Instruction() {
-    return (
 
-        <div className="instruction-container">
-            <p className="number">1.</p>
-            <p>Continuez sur 600m.</p>
-            <img src={arrowTop} alt="arrow direction" />
-        </div>
-    )
+class Instruction extends React.Component {
+    constructor({ instruction, index }) {
+        super({ instruction, index });
+        this.state = {
+            distance: instruction.distance
+        };
+        this.convertDistance = this.convertDistance.bind(this);
+    }
+
+    componentDidMount() {
+        this.convertDistance();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
+            this.convertDistance();
+        }
+    }
+
+    convertDistance() {
+        const { distance } = this.state;
+        const { instruction } = this.props;
+        if (instruction.distance <= 1000) {
+            this.setState({ distance: `${Math.round(instruction.distance)}m` })
+                ;
+        } else this.setState({ distance: `${Math.round((instruction.distance / 1000) * 10) / 10}km` });
+    }
+    render() {
+        const { distance } = this.state;
+        const { instruction, index } = this.props;
+        return (
+            <div className="instruction-container" >
+                <p className="number">{index + 1}.</p>
+                <p>{instruction.sign == 0 ? `${instruction.text} sur ${distance}.` : `Dans ${distance}, ${instruction.text.toLowerCase()}.`}</p>
+                <img src={signs[instruction.sign]} alt="arrow direction" />
+            </div>
+        )
+    }
 }
 
 export default Instruction;
