@@ -18,8 +18,9 @@ class Monture extends React.Component {
   }
 
   handleClick(event) {
+    const { monture } = this.state;
     this.setState({ monture: event.target.id });
-    console.log(this.state.monture);
+    console.log(monture);
     console.log(event.target.id);
   }
 

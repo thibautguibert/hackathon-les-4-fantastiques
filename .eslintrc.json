@@ -8,6 +8,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -16,5 +17,14 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "no-console": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/prop-types": 0,
+    "import/prefer-default-export": 0,
+    "react/state-in-constructor": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/no-unescaped-entities": 0,
+    "react/no-array-index-key": 0
+  }
 }

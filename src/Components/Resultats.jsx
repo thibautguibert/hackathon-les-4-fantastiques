@@ -1,13 +1,12 @@
 import React from 'react';
 import './Resultats.css';
-import Troubadour from './Troubadour'
 
-function Resultats(){
-    return(
-        <div>
-            <Troubadour />
-        </div>
-    )
+function Resultats() {
+  return (
+    <div>
+      <p>Résultats</p>
+    </div>
+  );
 }
 
 export default Resultats;
