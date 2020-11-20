@@ -1,12 +1,12 @@
 import React from 'react';
 import './Resultats.css';
-import Troubadour from './Troubadour'
 import arrowLeft from '../Images/arrow-left.svg';
 import arrowRight from '../Images/arrow-right.svg';
 import arrowTop from '../Images/arrow-top.svg';
 import arrowTopLeft from '../Images/arrow-top-left.svg';
 import arrowTopRight from '../Images/arrow-top-right.svg';
-
+import data from "./data.json";
+import Instruction from "./Instruction";
 
 const signs = {
     "- 98": "↶",
@@ -30,10 +30,32 @@ const signs = {
 //  phrase = "${text} sur ${distance > 1000 ? distance.arrondir au km : distance.arrondir au centaine de metre}"
 // } else phrase = "Dans ${distance > 1000 ? distance.arrondir au km : distance.arrondir au centaine de metre}, ${text}";
 
+const arrivée = "Paris";
+const distance = Math.round(data.paths[0].distance / 1000);
+const duréeHeure = Math.floor(data.paths[0].time / 3600000);
+const duréeMinute = Math.floor(data.paths[0].time / 60) % 60;
+const instructions = data.paths[0].instructions;
+
 function Resultats() {
     return (
-        <div>
-            <Troubadour />
+        <div className="page-resultats">
+            <header>
+                <p>Notre Carte Magique indique {instructions.length} étapes avant d'arriver à {arrivée} ! </p>
+                <br />
+                <p>La distance est de {distance} km, pour une durée de {duréeHeure}h{duréeMinute}.</p>
+            </header>
+            {console.log(data)}
+            <div className="resultats-divider">
+                <hr id="line1" />
+                <hr id="line2" />
+            </div>
+            <div className="instructions-container">
+                <Instruction />
+            </div>
+            <footer>
+                <button className="btn-back" type="button">Revenir à la carte</button>
+                <button className="btn-suite" type="button">Lire la suite</button>
+            </footer>
         </div>
     )
 }
