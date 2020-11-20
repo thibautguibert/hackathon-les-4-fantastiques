@@ -8,28 +8,6 @@ import arrowTopRight from '../Images/arrow-top-right.svg';
 import data from "./data.json";
 import InstructionList from "./InstructionList";
 
-const signs = {
-    "- 98": "↶",
-    "-8": "↶",
-    "-7": arrowTopLeft,
-    "-3": arrowLeft,
-    "-2": arrowLeft,
-    "-1": arrowTopLeft,
-    "0": arrowTop,
-    "1": arrowTopRight,
-    "2": arrowRight,
-    "3": arrowRight,
-    "4": arrowTop,
-    "5": arrowTop,
-    "6": "↻",
-    "7": arrowTopRight,
-    "8": "↺"
-};
-
-// (if signs === "0") {
-//  phrase = "${text} sur ${distance > 1000 ? distance.arrondir au km : distance.arrondir au centaine de metre}"
-// } else phrase = "Dans ${distance > 1000 ? distance.arrondir au km : distance.arrondir au centaine de metre}, ${text}";
-
 const arrivée = "Paris";
 const distance = Math.round(data.paths[0].distance / 1000);
 const duréeHeure = Math.floor(data.paths[0].time / 3600000);
