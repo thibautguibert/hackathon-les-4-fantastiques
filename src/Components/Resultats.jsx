@@ -1,6 +1,5 @@
 import React from 'react';
 import './Resultats.css';
-import dataJson from "./data.json";
 import InstructionList from "./InstructionList";
 import axios from 'axios';
 import { Link } from "react-router-dom";
