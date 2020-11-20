@@ -38,13 +38,15 @@ class Itineraire extends React.Component {
 
   handleClickDep = (event) => {
     const { resultApiDep } = this.state;
-    const { depPoint } = this.props;
+    const { depPoint, ville } = this.props;
     const id = parseInt(event.target.id, 10);
     const selectLat = resultApiDep[id].point.lat;
     const selectLong = resultApiDep[id].point.lng;
+    const selectVille = resultApiDep[id].name;
     console.log(depPoint);
     depPoint.latitude = selectLat;
     depPoint.longitude = selectLong;
+    ville.départ = selectVille;
     this.setState({
       resultApiDep: [],
       isDeparture: false,
@@ -53,13 +55,15 @@ class Itineraire extends React.Component {
 
   handleClickArr = (event) => {
     const { resultApiArr } = this.state;
-    const { arrPoint } = this.props;
+    const { arrPoint, ville } = this.props;
     const id = parseInt(event.target.id, 10);
     const selectLat = resultApiArr[id].point.lat;
     const selectLong = resultApiArr[id].point.lng;
+    const selectVille = resultApiArr[id].name;
     console.log(arrPoint);
     arrPoint.latitude = selectLat;
     arrPoint.longitude = selectLong;
+    ville.arrivée = selectVille;
     this.setState({
       resultApiArr: [],
     });
