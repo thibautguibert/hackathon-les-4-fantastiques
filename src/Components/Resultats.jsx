@@ -29,7 +29,6 @@ class Resultats extends React.Component {
         const monture = "car";
         const apiKey = 'c538faf0-14b9-4af5-8901-07cbc87d8b26';
         const url = `https://graphhopper.com/api/1/route?point=${depPoint.latitude},${depPoint.longitude}&point=${arrPoint.latitude},${arrPoint.longitude}&vehicle=${monture}&locale=fr&calc_points=true&key=${apiKey}`
-        console.log(url);
         axios.get(url).then(res => {
             this.setState({
                 distance: Math.round(res.data.paths[0].distance / 1000),
@@ -38,8 +37,6 @@ class Resultats extends React.Component {
                 instructions: res.data.paths[0].instructions,
                 isLoaded: true,
             })
-            console.log(this.state.instructions)
-            console.log(res.data.paths[0].instructions)
         })
     }
 

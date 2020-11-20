@@ -91,3 +91,9 @@
     height: 24px;
     width: 24px;
 }
+
+@media screen and (min-width: 500px) {
+    .instruction-container {
+        padding: 40px 20%;
+    }
+}
