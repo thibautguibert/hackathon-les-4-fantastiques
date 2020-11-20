@@ -18,11 +18,15 @@ class App extends React.Component {
         latitude: 0,
         longitude: 0,
       },
+      ville: {
+        départ: "",
+        arrivée: ""
+      },
     };
   }
 
   render() {
-    const { depPoint, arrPoint } = this.state;
+    const { depPoint, arrPoint, ville } = this.state;
 
     return (
       <Router>
@@ -32,10 +36,14 @@ class App extends React.Component {
           <Route
             path="/Itineraire"
             component={() => (
-              <Itineraire arrPoint={arrPoint} depPoint={depPoint} />
+              <Itineraire arrPoint={arrPoint} depPoint={depPoint} ville={ville} />
             )}
           />
-          <Route path="/Resultats" component={Resultats} />
+          <Route
+            path="/Resultats" component={() => (
+              <Resultats arrPoint={arrPoint} depPoint={depPoint} ville={ville} />
+            )}
+          />
         </Switch>
       </Router>
     );
