@@ -58,8 +58,6 @@ class Resultats extends React.Component {
                     <hr id="line1" />
                     <hr id="line2" />
                 </div>
-                {            console.log(instructions)
-                }
                 <div className="instructions-container">
                     {isLoaded
                         ? <InstructionList instructionList={instructions} page={page} />

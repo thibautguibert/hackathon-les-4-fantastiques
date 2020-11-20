@@ -15,7 +15,7 @@
 
 .page-resultats .resultats-divider{
     width: 100%;
-    height: 50px;
+    height: 100px;
 }
 
 .page-resultats hr {
@@ -73,17 +73,16 @@
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    padding: 20px 20px;
+    padding: 20px 30px;
     text-align: center;
 }
 
 .instruction-container .number {
-    font-size: 20px;
+    font-size: 24px;
 }
 
-.instruction-container p {
-    font-size: 15px;
-    padding-right: 10px;
+.instruction-container p{
+padding-right: 10px;
 }
 
 .instruction-container img {
