@@ -1,52 +1,88 @@
 import React from 'react';
 import './Resultats.css';
-import arrowLeft from '../Images/arrow-left.svg';
-import arrowRight from '../Images/arrow-right.svg';
-import arrowTop from '../Images/arrow-top.svg';
-import arrowTopLeft from '../Images/arrow-top-left.svg';
-import arrowTopRight from '../Images/arrow-top-right.svg';
-import data from "./data.json";
+import dataJson from "./data.json";
 import InstructionList from "./InstructionList";
+import axios from 'axios';
+import { Link } from "react-router-dom";
 
-const arrivée = "Paris";
-const distance = Math.round(data.paths[0].distance / 1000);
-const duréeHeure = Math.floor(data.paths[0].time / 3600000);
-const duréeMinute = Math.floor(data.paths[0].time / 60) % 60;
-const instructions = data.paths[0].instructions;
+
+const monture = "car";
 
 class Resultats extends React.Component {
     constructor() {
         super();
         this.state = {
-            page: 0
+            page: 0,
+            distance: 0,
+            duréeHeure: 0,
+            duréeMinute: 0,
+            instructions: [],
+            isLoaded: false
         }
         this.handleClick = this.handleClick.bind(this);
+        this.handleBackClick = this.handleBackClick.bind(this);
+
+    }
+
+    componentDidMount() {
+        const { arrPoint, depPoint } = this.props;
+        const monture = "car";
+        const apiKey = 'c538faf0-14b9-4af5-8901-07cbc87d8b26';
+        const url = `https://graphhopper.com/api/1/route?point=${depPoint.latitude},${depPoint.longitude}&point=${arrPoint.latitude},${arrPoint.longitude}&vehicle=${monture}&locale=fr&calc_points=true&key=${apiKey}`
+        console.log(url);
+        axios.get(url).then(res => {
+            this.setState({
+                distance: Math.round(res.data.paths[0].distance / 1000),
+                duréeHeure: Math.floor(res.data.paths[0].time / 3600000),
+                duréeMinute: Math.floor(res.data.paths[0].time / 60) % 60,
+                instructions: res.data.paths[0].instructions,
+                isLoaded: true,
+            })
+            console.log(this.state.instructions)
+            console.log(res.data.paths[0].instructions)
+        })
     }
 
     handleClick() {
         this.setState({ page: this.state.page + 1 })
     }
 
+    handleBackClick() {
+        this.setState({ page: this.state.page - 1 })
+    }
+
     render() {
-        const { page } = this.state;
+        const { page, distance, duréeHeure, duréeMinute, instructions, isLoaded } = this.state;
+        const { ville } = this.props;
         return (
             <div className="page-resultats">
                 <header>
-                    <p>Notre Carte Magique indique {instructions.length} étapes avant d'arriver à {arrivée} ! </p>
+                    <p>Notre Carte Magique indique {instructions.length} étapes avant d'arriver à {ville.arrivée} ! </p>
                     <br />
                     <p>La distance est de {distance} km, pour une durée de {duréeHeure}h{duréeMinute}.</p>
                 </header>
-                {console.log(data)}
                 <div className="resultats-divider">
                     <hr id="line1" />
                     <hr id="line2" />
                 </div>
+                {            console.log(instructions)
+                }
                 <div className="instructions-container">
-                    <InstructionList instructionList={instructions} page={page} />
+                    {isLoaded
+                        ? <InstructionList instructionList={instructions} page={page} />
+                        : "loading..."
+                    }
                 </div>
                 <footer>
-                    <button className="btn-back" type="button">Revenir à la carte</button>
-                    <button className="btn-suite" type="button" onClick={this.handleClick}>Lire la suite</button>
+                    <div className="btn-page">
+
+                        <button className="btn-suite" type="button" onClick={this.handleClick}>Lire la suite</button>
+                        <button className="btn-suite" type="button" onClick={this.handleBackClick}>Précédent</button>
+                    </div>
+
+                    <Link to="/Itineraire">
+                        <button className="btn-back" type="button">Revenir à la carte</button>
+                    </Link>
                 </footer>
             </div>
         )
