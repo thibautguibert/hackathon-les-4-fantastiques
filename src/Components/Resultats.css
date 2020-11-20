@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     background: url(../Images/parchment-for-inside-page.gif) center;
     background-position: cover;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    padding: 30px;
+    padding: 20px 30px;
     text-align: center;
 }
 
@@ -78,6 +78,12 @@
     font-size: 24px;
 }
 
+.instruction-container p{
+padding-right: 10px;
+}
+
 .instruction-container img {
     color: var(--bistreB);
+    height: 24px;
+    width: 24px;
 }
