@@ -8,24 +8,9 @@ import Parchemin from '../Images/parchemin.png';
 import './Monture.css';
 import Troubadour from './Troubadour';
 
-class Monture extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      monture: '',
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(event) {
-    const { monture } = this.state;
-    this.setState({ monture: event.target.id });
-    console.log(monture);
-    console.log(event.target.id);
-  }
-
-  render() {
-    return (
+function Monture({ handleClick }) {
+  return (
+    <div>
       <div className="monture">
         <h1 className="titreMonture">L'ecurie magique</h1>
         <div className="choixMonture">
@@ -39,7 +24,7 @@ class Monture extends React.Component {
                 className="imageDragon"
                 src={Dragon}
                 id="car"
-                onClick={this.handleClick}
+                onClick={handleClick}
                 alt="imageDragon"
               ></img>
               <div className="parcheminTexteD">
@@ -47,10 +32,10 @@ class Monture extends React.Component {
                   className="imageParchemin"
                   src={Parchemin}
                   id="car"
-                  onClick={this.handleClick}
+                  onClick={handleClick}
                   alt="imageParchemin"
                 ></img>
-                <p className="enDragon" id="car" onClick={this.handleClick}>
+                <p className="enDragon" id="car" onClick={handleClick}>
                   en dragon
                 </p>
               </div>
@@ -66,7 +51,7 @@ class Monture extends React.Component {
                 className="imagePied"
                 src={Pied}
                 id="foot"
-                onClick={this.handleClick}
+                onClick={handleClick}
                 alt="imagePied"
               ></img>
               <div className="parcheminTexteP">
@@ -74,10 +59,10 @@ class Monture extends React.Component {
                   className="imageParchemin"
                   src={Parchemin}
                   id="foot"
-                  onClick={this.handleClick}
+                  onClick={handleClick}
                   alt="imageParchemin"
                 ></img>
-                <p className="aPied" id="foot" onClick={this.handleClick}>
+                <p className="aPied" id="foot" onClick={handleClick}>
                   a pied
                 </p>
               </div>
@@ -93,7 +78,7 @@ class Monture extends React.Component {
                 className="imageFumant"
                 src={Fumant}
                 id="scooter"
-                onClick={this.handleClick}
+                onClick={handleClick}
                 alt="imageFumant"
               ></img>
               <div className="parcheminTexteF">
@@ -101,10 +86,10 @@ class Monture extends React.Component {
                   className="imageParchemin"
                   src={Parchemin}
                   id="scooter"
-                  onClick={this.handleClick}
+                  onClick={handleClick}
                   alt="imageParchemin"
                 ></img>
-                <p className="enFumant" id="scooter" onClick={this.handleClick}>
+                <p className="enFumant" id="scooter" onClick={handleClick}>
                   en fumant
                 </p>
               </div>
@@ -120,7 +105,7 @@ class Monture extends React.Component {
                 className="imageCheval"
                 src={Cheval}
                 id="bike"
-                onClick={this.handleClick}
+                onClick={handleClick}
                 alt="imageCheval"
               ></img>
               <div className="parcheminTexteC">
@@ -128,20 +113,20 @@ class Monture extends React.Component {
                   className="imageParchemin"
                   src={Parchemin}
                   id="bike"
-                  onClick={this.handleClick}
+                  onClick={handleClick}
                   alt="imageParchemin"
                 ></img>
-                <p className="aCheval" id="bike" onClick={this.handleClick}>
+                <p className="aCheval" id="bike" onClick={handleClick}>
                   a cheval
                 </p>
               </div>
             </div>
           </NavLink>
         </div>
-        <Troubadour />
       </div>
-    );
-  }
+      <Troubadour texte="Quelle belle bête avez-vous l'habitude de monter? Et je ne parle pas de Cunégonde" />
+    </div>
+  );
 }
 
 export default Monture;

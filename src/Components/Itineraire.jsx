@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Troubadour from './Troubadour';
+import Cheval from '../Images/cheval.png';
 import './Itineraire.css';
 
 class Itineraire extends React.Component {
@@ -13,6 +14,7 @@ class Itineraire extends React.Component {
       arrival: '',
       resultApiDep: [],
       resultApiArr: [],
+      isDeparture: true,
     };
   }
 
@@ -47,6 +49,7 @@ class Itineraire extends React.Component {
     ville.départ = selectVille;
     this.setState({
       resultApiDep: [],
+      isDeparture: false,
     });
   };
 
@@ -85,7 +88,13 @@ class Itineraire extends React.Component {
   }
 
   render() {
-    const { departure, arrival, resultApiDep, resultApiArr } = this.state;
+    const {
+      departure,
+      arrival,
+      resultApiDep,
+      resultApiArr,
+      isDeparture,
+    } = this.state;
     const {
       handleChangeArrival,
       handleChangeDeparture,
@@ -93,48 +102,65 @@ class Itineraire extends React.Component {
       handleClickArr,
     } = this;
     return (
-      <div>
-        <form className="itineraryAddress">
-          <input
-            type="text"
-            id="departure"
-            name="departure"
-            value={departure}
-            placeholder="Départ"
-            onChange={handleChangeDeparture}
-          />
-          <input
-            type="text"
-            id="arrival"
-            name="arrival"
-            value={arrival}
-            placeholder="Arrivée"
-            onChange={handleChangeArrival}
-          />
-        </form>
-        <ul>
-          {resultApiDep.map((city, index) => (
-            <li key={city.osm_id}>
-              <button type="button" id={index} onClick={handleClickDep}>
-                {city.name} {city.state}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {resultApiArr.map((city, index) => (
-            <li key={city.osm_id}>
-              <button type="button" id={index} onClick={handleClickArr}>
-                {city.name} {city.state}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <button type="button">
-          <Link to="/Resultats">Result</Link>
+      <div className="itineraire-back">
+        <h1 className="titreItineraire">L'itinéraire</h1>
+        <div className="merde">
+          <Link to="/Monture">
+            <button type="button" className="buttonMonture">
+              Changer de monture
+            </button>
+          </Link>
+
+          <img className="cheval-itineraire" src={Cheval} alt="imageDragon" />
+          <form className="itineraryAddress">
+            <input
+              type="text"
+              id="departure"
+              name="departure"
+              value={departure}
+              placeholder="Départ"
+              onChange={handleChangeDeparture}
+            />
+            <input
+              type="text"
+              id="arrival"
+              name="arrival"
+              value={arrival}
+              placeholder="Arrivée"
+              onChange={handleChangeArrival}
+            />
+          </form>
+        </div>
+        <div className="itineraire-liste">
+          {isDeparture ? (
+            <ul>
+              {resultApiDep.map((city, index) => (
+                <li key={city.osm_id}>
+                  <button type="button" id={index} onClick={handleClickDep}>
+                    {city.name} {city.state}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <ul>
+              {resultApiArr.map((city, index) => (
+                <li key={city.osm_id}>
+                  <button type="button" id={index} onClick={handleClickArr}>
+                    {city.name} {city.state}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <button className="itineraire-bouton" type="button">
+          <Link to="/Resultats" style={{ color: '#46191A' }}>
+            Calculer mon itinéraire
+          </Link>
         </button>
         <div>
-          <Troubadour />
+          <Troubadour texte="Où qu'c'est que votre quête débute? Et où qu'c'est que Cunégonde a été enlevée? Et où qu'c'est que vous avez mis ma bière" />
         </div>
       </div>
     );

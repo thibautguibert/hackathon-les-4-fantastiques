@@ -17,8 +17,8 @@ function Home() {
           </button>
         </div>
       </Link>
-      <div>
-        <Troubadour />
+      <div className="texteTrou">
+        <Troubadour texte="Bienvenue Messire dans ta quête pour sauver la brave Cunégonde. La mappe-monde te dira comment aller d'un point A à un point B" />
       </div>
     </div>
   );
