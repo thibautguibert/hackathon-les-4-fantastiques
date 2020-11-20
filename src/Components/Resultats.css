@@ -15,7 +15,7 @@
 
 .page-resultats .resultats-divider{
     width: 100%;
-    height: 100px;
+    height: 50px;
 }
 
 .page-resultats hr {
@@ -51,6 +51,7 @@
     font-size: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     text-align: center center;
+    margin: 15px;
 }
 
 .page-resultats footer .btn-suite {
@@ -72,20 +73,27 @@
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    padding: 20px 30px;
+    padding: 20px 20px;
     text-align: center;
 }
 
 .instruction-container .number {
-    font-size: 24px;
+    font-size: 20px;
 }
 
-.instruction-container p{
-padding-right: 10px;
+.instruction-container p {
+    font-size: 15px;
+    padding-right: 10px;
 }
 
 .instruction-container img {
     color: var(--bistreB);
     height: 24px;
     width: 24px;
+}
+
+@media screen and (min-width: 500px) {
+    .instruction-container {
+        padding: 40px 20%;
+    }
 }
