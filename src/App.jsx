@@ -19,29 +19,50 @@ class App extends React.Component {
         longitude: 0,
       },
       ville: {
-        départ: "",
-        arrivée: ""
+        départ: '',
+        arrivée: '',
       },
+      monture: '',
     };
   }
 
+  handleClick = (event) => {
+    const { monture } = this.state;
+    this.setState({ monture: event.target.id });
+    console.log(monture);
+    console.log(event.target.id);
+  };
+
   render() {
-    const { depPoint, arrPoint, ville } = this.state;
+    const { depPoint, arrPoint, ville, monture } = this.state;
 
     return (
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Monture" component={Monture} />
+          <Route
+            path="/Monture"
+            component={() => <Monture handleClick={this.handleClick} />}
+          />
           <Route
             path="/Itineraire"
             component={() => (
-              <Itineraire arrPoint={arrPoint} depPoint={depPoint} ville={ville} />
+              <Itineraire
+                arrPoint={arrPoint}
+                depPoint={depPoint}
+                ville={ville}
+              />
             )}
           />
           <Route
-            path="/Resultats" component={() => (
-              <Resultats arrPoint={arrPoint} depPoint={depPoint} ville={ville} />
+            path="/Resultats"
+            component={() => (
+              <Resultats
+                arrPoint={arrPoint}
+                depPoint={depPoint}
+                ville={ville}
+                monture={monture}
+              />
             )}
           />
         </Switch>

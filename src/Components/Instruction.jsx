@@ -4,9 +4,11 @@ import arrowRight from '../Images/arrow-right.svg';
 import arrowTop from '../Images/arrow-top.svg';
 import arrowTopLeft from '../Images/arrow-top-left.svg';
 import arrowTopRight from '../Images/arrow-top-right.svg';
+import roundAbout from '../Images/roundabout.svg';
+import uTurn from '../Images/u-turn.svg';
 const signs = {
-    "- 98": "↶",
-    "-8": "↶",
+    "- 98": uTurn,
+    "-8": uTurn,
     "-7": arrowTopLeft,
     "-3": arrowLeft,
     "-2": arrowLeft,
@@ -17,9 +19,9 @@ const signs = {
     "3": arrowRight,
     "4": arrowTop,
     "5": arrowTop,
-    "6": "↻",
+    "6": roundAbout,
     "7": arrowTopRight,
-    "8": "↺"
+    "8": roundAbout
 };
 
 
