@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Troubadour from './Troubadour';
 import './Itineraire.css';
 
 class Itineraire extends React.Component {
@@ -128,6 +129,9 @@ class Itineraire extends React.Component {
         <button type="button">
           <Link to="/Resultats">Result</Link>
         </button>
+        <div>
+          <Troubadour />
+        </div>
       </div>
     );
   }
