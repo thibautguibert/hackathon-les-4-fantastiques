@@ -5,9 +5,6 @@ import InstructionList from "./InstructionList";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
-
-const monture = "car";
-
 class Resultats extends React.Component {
     constructor() {
         super();
@@ -25,8 +22,7 @@ class Resultats extends React.Component {
     }
 
     componentDidMount() {
-        const { arrPoint, depPoint } = this.props;
-        const monture = "car";
+        const { arrPoint, depPoint, monture } = this.props;
         const apiKey = 'c538faf0-14b9-4af5-8901-07cbc87d8b26';
         const url = `https://graphhopper.com/api/1/route?point=${depPoint.latitude},${depPoint.longitude}&point=${arrPoint.latitude},${arrPoint.longitude}&vehicle=${monture}&locale=fr&calc_points=true&key=${apiKey}`
         console.log(url);
