@@ -76,8 +76,8 @@ class Resultats extends React.Component {
                 <footer>
                     <div className="btn-page">
 
-                        <button className="btn-suite" type="button" onClick={this.handleClick}>Lire la suite</button>
-                        <button className="btn-suite" type="button" onClick={this.handleBackClick}>Précédent</button>
+                        {page === 0 ? "" : <button className="btn-suite" type="button" onClick={this.handleBackClick}>Précédent</button>}
+                        {(instructions.length / (page + 1)) > 4 ? <button className="btn-suite" type="button" onClick={this.handleClick}>Lire la suite</button> : ""}
                     </div>
 
                     <Link to="/Itineraire">
