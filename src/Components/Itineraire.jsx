@@ -130,7 +130,7 @@ class Itineraire extends React.Component {
           <Link to="/Resultats">Result</Link>
         </button>
         <div>
-          <Troubadour />
+          <Troubadour texte="Où qu'c'est que votre quête débute? Et où qu'c'est que Cunégonde a été enlevée? Et où qu'c'est que vous avez mis ma bière" />
         </div>
       </div>
     );
