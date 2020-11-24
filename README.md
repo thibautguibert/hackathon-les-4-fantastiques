@@ -13,7 +13,7 @@ We were given 29 hours to complete the mission.
 Our team included Sarah Quero, Damien Mauger, Valentin Broudin, Hugo Monchâtre and Thibaut Guibert.
 
 3. Our idea was to solve the issue of road navigation during the Middle Ages, with no map nor GPS available for common folks.
-By using the API of GraphHopper, we were able to display road navigation instructions from a town to another that were given a user.
+By using the API of GraphHopper, we were able to display road navigation instructions from a town to another that were given by the user.
 
 To keep with the pitch idea of time travel, we created a design similar to what could have been a web application with the style of Middle Ages.
 
@@ -23,5 +23,5 @@ To keep with the pitch idea of time travel, we created a design similar to what 
 - valentin.broudinpro@gmail.com
 - mauger.damien@hotmail.fr
 - hugo.monchatre@gmail.com
-- thibaut.guibert@gmail.com
+- thibaut.guibert@edu.escp.eu
 - sarahquero@gmail.com
