@@ -12,8 +12,27 @@
     --darkS: #46191A;
     --charleston: #2A2A2A;
     --coffeP: #764E2D;
+    --body-bg-color: rgba(237, 237, 240, 1);
+}
+
+html{
+    background-color: var(--body-bg-color);
+    display: flex;
+    justify-content: center;
+    padding: 30px;
 }
 
 body {
     font-family: "Uncial Antiqua";
+    width: 414px;
+    height: 736px;
+    max-height: 736px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 0px 9px rgba(0,0,0, 0.2);
+}
+
+#root {
+    width: 414px;
+    height: 736px;
 }

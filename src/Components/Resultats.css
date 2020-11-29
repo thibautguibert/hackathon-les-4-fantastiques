@@ -6,8 +6,9 @@
     background: url(../Images/parchment-for-inside-page.gif) center;
     background-position: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    width: 414px;
+    height: 736px;
+    max-width: 414px;
     padding: 30px;
     color: var(--sealB);
     text-align: center;
@@ -72,7 +73,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     padding: 20px 20px;
     text-align: center;
 }
@@ -91,7 +92,7 @@
     height: 24px;
     width: 24px;
 }
-
+/* 
 @media screen and (min-width: 500px) {
     .instruction-container {
         padding: 30px 20%;
@@ -101,4 +102,4 @@
         font-size: 20px;
         padding: 0 25px;
     }
-}
+} */

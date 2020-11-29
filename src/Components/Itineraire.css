@@ -6,7 +6,7 @@
   position: absolute;
 }
 
-.merde {
+.button-container {
   position: relative;
 }
 
@@ -25,13 +25,20 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
+.itineraire-page{
+  width: 414px;
+  height: 736px;
+  max-width: 414px;
+}
+
 .itineraire-back {
   background-image: url('../Images/itineraire-back.jpg');
   background-size: cover;
   background-position: 60% 75%;
   background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
+  width: 414px;
+  height: 736px;
+  max-width: 414px;
 }
 
 .titreItineraire {
@@ -82,13 +89,13 @@
 }
 
 .itineraire-liste ul {
+  padding: 0 20px 0 10px;
   list-style-type: none;
   background: #f8e7ba;
   opacity: 0.9;
-  border-radius: 7px;
-  margin: 20px;
-  width: 80%;
-  margin-top: -10px;
+  border-radius: 0 0 7px 7px;
+  margin: 5px 12.5% 10px;
+  width: 75%;
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -98,10 +105,10 @@
   font-family: 'Uncial Antiqua';
   font-size: 15px;
   text-align: left;
-}
-
-.itineraire-liste button {
+  width: 100%;
+  padding: 3px 0;
   border: none;
+  border-bottom: solid 1px #46191a;
   background-image: none;
   background-color: transparent;
   -webkit-box-shadow: none;
@@ -123,6 +130,8 @@
   border-radius: 20px;
   margin-bottom: 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
 }
 
 .itineraire-bouton a {

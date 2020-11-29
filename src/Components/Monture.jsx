@@ -10,7 +10,7 @@ import Troubadour from './Troubadour';
 
 function Monture({ handleClick }) {
   return (
-    <div>
+    <div className="monture-page">
       <div className="monture">
         <h1 className="titreMonture">L'ecurie magique</h1>
         <div className="choixMonture">
