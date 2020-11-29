@@ -18,6 +18,9 @@
     align-items: center;
 }
 
+.Philippe a {
+    text-decoration: none;
+}
 
 .title {
     display: flex;
